@@ -1,13 +1,14 @@
 
 package tictactoe;
 import java.util.Scanner;
+import java.util.Random;
 
 
 public class Tictactoegame {
 	
 	char playerchance;
 	char computerchance;
-	char board[] = new char[10];
+	private static char board[] = new char[10];
 	Scanner scan = new Scanner(System.in);
 	//create board
 	public static char[] game() {
@@ -40,24 +41,51 @@ public class Tictactoegame {
 	public boolean Position(int location) {
 		if (board[location] == 'X' || board[location] == 'O') { 
 			System.out.println("choose other position");
+			
+			
 			return true;
 		} else {
 			return false;
 		}
 	}
-	static String turn;
-	static String letterchoosing() {
-		
-		String line=null;
-		 System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
-		            
-		            
-		        return null;
+	
+	public void letterchoosing() {
+		Scanner scan = new Scanner(System.in);
+		char player = scan.next().charAt(0); // getting input from player
+
+		if (player == 'X') {
+			System.out.println("HumanPlayer symbol : 'X' ");
+			System.out.println("ComputerPlayer symbol: 'O' ");
+		} else {
+			System.out.println("HumanPlayer symbol : 'O' ");
+			System.out.println("ComputerPlayer symbol: 'X' ");
+		}
+	}
+	
+	//Toss to check which player plays first
+	public void Toss() {
+	      Random r = new Random();
+	      int chance = r.nextInt(2);
+	      if (chance == 1) {
+	         System.out.println("Player is playing");
+	      } else {
+	         System.out.println("Computer is playing");
+	      }
+	   }
+	
+	//main method
+	public static void main(String[] args) {
+		System.out.println("Welcome to TicTacToe game");
+		Tictactoegame boardgame = new Tictactoegame();
+		boardgame.game(); 
+		boardgame.printBoard(); 
+		boardgame.Position(0);
+		boardgame.letterchoosing();
+		boardgame.Toss();
 	}
 		
-	     
-	    
-	    		
+		
+			    		
 }
 
 
