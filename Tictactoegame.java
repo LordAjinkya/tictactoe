@@ -45,11 +45,19 @@ public class Tictactoegame {
 			return false;
 		}
 	}
+	static String turn;
+	static String letterchoosing() {
+		
+		String line=null;
+		 System.out.println(turn + "'s turn; enter a slot number to place " + turn + " in:");
+		            
+		            
+		        return null;
+	}
 		
 	     
 	    
-	    	
-	    	
+	    		
 }
 
 
