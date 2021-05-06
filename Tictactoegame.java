@@ -1,38 +1,48 @@
-import java.util.*;
-package tictactoe;
 
-import java.awt.Choice;
+package tictactoe;
+import java.util.Scanner;
+
 
 public class Tictactoegame {
-	String[] board;
-	String chance;
-	static String game() {
-		 char[] board =new char[10];
+	
+	char playerchance;
+	char computerchance;
+	char board[] = new char[10];
+	Scanner scan = new Scanner(System.in);
+	//create board
+	public static char[] game() {
+		for (int i = 1; i < board.length; i++) {
+			board[i]=' ';
+		}
+		return board;
 		
-		for (int i=0;i<10;i++) {
-			String line=null;
-			
-		}
 		
-			
-		}
-	class chooseuser{
-		chooseuser(){
-			Choice c=new Choice();
-			c.add("X");
-			c.add("O");
-			
-		}
 	}
-
-
-	public static void main(String[] args) {
+	//display board
+	static void printBoard()
+    {
+        System.out.println("|---|---|---|");
+        System.out.println("| " + board[0] + " | "
+                           + board[1] + " | " + board[2]
+                           + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + board[3] + " | "
+                           + board[4] + " | " + board[5]
+                           + " |");
+        System.out.println("|-----------|");
+        System.out.println("| " + board[6] + " | "
+                           + board[7] + " | " + board[8]
+                           + " |");
+        System.out.println("|---|---|---|");
+    }
 		
-		System.out.println("Welcome to tictactoe game");
-		game();
-		System.out.println("Choose your letter");
-		new chooseuser();
-
-	}
-
+	     
+	    
+	    	
+	    
+	    
+	
+	
 }
+
+
